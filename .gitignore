@@ -1,0 +1,9 @@
+/financial_times/
+/treehacks-energy/
+/processed_data/
+*.p
+*.csv
+*.json
+*.png
+*.jpeg
+*.tiff
