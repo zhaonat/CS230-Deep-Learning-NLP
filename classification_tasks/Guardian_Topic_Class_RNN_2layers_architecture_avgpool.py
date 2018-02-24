@@ -7,7 +7,7 @@ from keras.layers import Dense
 import keras
 from keras import backend
 from keras.layers import Embedding, LSTM, Dense, Conv1D, MaxPooling1D, Dropout, Activation, Reshape, InputLayer, Lambda, GlobalAveragePooling1D
-from keras.models import Sequential
+from keras.models import Sequential, load_model
 from keras.preprocessing.sequence import pad_sequences
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
@@ -16,9 +16,13 @@ from keras import regularizers
 from keras import optimizers
 from keras.backend.tensorflow_backend import set_session
 import tensorflow as tf
-import argparse
+import argparse, os
 
 parser = argparse.ArgumentParser()
+parser.add_argument('-i', '--input_dir', type=str, help='directory containing data', default='../NewsMining/no_stop_words/')
+parser.add_argument('-o', '--output', type=str, help='path to save trained model', default='models/model.h5')
+parser.add_argument('-p', '--pretrain', type=str, help='path to pretrained model', default=None)
+parser.add_argument('-e', '--epochs', type=int, help='training epochs', default=300)
 parser.add_argument('-w', '--max_words', type=int, help='max_words in a sentence', default=20)
 parser.add_argument('-s', '--max_sentences', type=int, help='max_sentences in a articles', default=20)
 parser.add_argument('-v', '--word_vector_dim', type=int, default=64)
@@ -41,8 +45,8 @@ lr = args.lr
 dropout = args.d
 recurrent_dropout = args.rd
 
-data = np.load('docs.npy')
-onehot_encoded = np.load('labels.npy')
+data = np.load(os.path.join(args.input_dir, 'docs.npy'))
+onehot_encoded = np.load(os.path.join(args.input_dir, 'labels.npy'))
 
 ### model
 num_word = 1000
@@ -50,10 +54,11 @@ num_labels = len(np.unique(onehot_encoded, axis=0))
 print(num_labels)
 batch_size = 10
 
+def backend_reshape(x, shape):
+    return keras.backend.reshape(x, shape)
+
 model = Sequential()
 model.add(InputLayer(input_shape=(max_sentences, max_words)))
-def backend_reshape(x, shape):
-    return backend.reshape(x, shape)
 model.add(Lambda(backend_reshape, output_shape=(max_words,), arguments={'shape': (-1, max_words)}))
 
 model.add(Embedding(num_word, word_vector_dim, input_length=max_words))
@@ -75,6 +80,7 @@ model.add(GlobalAveragePooling1D()) ## Global Pooling
 for d in DENSE_dims:
     model.add(Dense(d, activation='relu'))
 model.add(Dense(num_labels, activation='softmax'))
+
 opt = optimizers.adam(lr=lr)
 model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
 
@@ -85,7 +91,13 @@ print(data.shape, onehot_encoded.shape)
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 set_session(tf.Session(config=config))
-history = model.fit(data, onehot_encoded, epochs=300, batch_size=batch_size,  validation_split=0.2, verbose = True);
+
+if args.pretrain is not None:
+    model.load_weights(args.pretrain)
+    print("loaded pretrained model: %s" % args.pretrain)
+history = model.fit(data, onehot_encoded, epochs=args.epochs, batch_size=batch_size,  validation_split=0.2, verbose = True);
+print("model saved to %s" % args.output)
+model.save_weights(args.output)
 
 
 
