@@ -29,11 +29,9 @@ from keras.optimizers import Adam
 from keras.models import Model
 from collections import Counter
 
+max_features = 4000;
 
-
-max_features = 2000;
-
-dir = '/Users/Jiahui/Classes/2018Winter/cs230/project/datasets/guardian/processed/'
+dir = 'D:/Documents/Classes/CS230/processed_data/'
 
 guardian = dir+'Guardian_raw_epoch_1_with_labels.p';
 #guardian = dir+'Guardian_epoch_1_with_labels.p';
@@ -59,7 +57,7 @@ onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
 num_labels = len(set(labels));
 
 # Use tokenizer
-num_word = 1000 # will be the input dimensions
+num_word = 3000 # will be the input dimensions
 tokenizer = Tokenizer(num_words=num_word)
 tokenizer.fit_on_texts(guardian_corpus)
 sequences = tokenizer.texts_to_sequences(guardian_corpus)
@@ -73,7 +71,7 @@ filter_sizes = [3,4,5]
 num_filters = [100,100,100]
 drop = 0.3
 
-epochs = 100
+epochs = 25
 batch_size = 100
 
 ## this is our features
@@ -97,7 +95,6 @@ concatenated_tensor = Concatenate(axis=1)([pooled_conv_0, pooled_conv_1, pooled_
 flatten = Flatten()(concatenated_tensor)
 dropout = Dropout(drop)(flatten)
 output = Dense(num_labels,kernel_regularizer=regularizers.l2(0.001),activity_regularizer=regularizers.l1(0.001), activation='softmax')(dropout)
-
 model = Model(inputs=inputs, outputs=output)
 
 adam = Adam(lr=1e-3, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
@@ -107,25 +104,43 @@ model.compile(optimizer=adam, loss='categorical_crossentropy', metrics=['accurac
 print("Traning Model...")
 history = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, verbose=True, validation_data=(X_test, Y_test))  # starts training
 
+plt.figure(figsize = (20,15))
+
+
+plt.rc('axes', linewidth=3)
+plt.rc('axes', )
+plt.rc('font', size=30)          # controls default text sizes
+plt.rc('axes', titlesize=30)     # fontsize of the axes title
+plt.rc('axes', labelsize=30)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=35)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=35)    # fontsize of the tick labels
+plt.rc('legend', fontsize=30)    # legend fontsize
+plt.rc('figure', titlesize=55)  # fontsize of the figure title
+
+
 #save model data
 print(history.history.keys())
 # summarize history for accuracy
-plt.plot(history.history['acc'])
-plt.plot(history.history['val_acc'])
+plt.plot(history.history['acc'], linewidth = 2)
+plt.plot(history.history['val_acc'], linewidth = 2)
 plt.title(' Guardian topic CNN model accuracy')
 plt.ylabel('accuracy')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
-plt.savefig(' Guardian topic CNN model accuracy.png');# summarize history for loss
+plt.savefig('Guardian topic CNN model accuracy.png');# summarize history for loss
 
 
 
-plt.figure()
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
+plt.figure(figsize = (20,15))
+plt.plot(history.history['loss'], linewidth = 2)
+plt.plot(history.history['val_loss'], linewidth = 2)
 plt.title('Guardian topic CNN model loss')
 plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
+plt.savefig('Guardian topic CNN Loss History.png');# summarize history for loss
+
 plt.show();
+
+model.summary();
 

@@ -35,8 +35,6 @@ for article in data.T.columns:
     if(doc_counter > num_examples):
         break;
     text = (data.T[article]['text'])
-    if('Financial Times' in text):
-        print('found something')
     if(isinstance(text, str)):
         document_data.append(text);
         section_label.append(data.T[article]['sectionId'])
@@ -71,34 +69,34 @@ print(tokenized_docs_no_punctuation);
 end = time.time()
 print(end-start)
 
-# start = time.time()
-# ## remove stop words: THIS IS THE MOST EXPENSIVE PART cuz it is O(n^2)
-# tokenized_docs_no_stopwords = []
-# for doc in tokenized_docs_no_punctuation:
-#     new_term_vector = []
-#     for word in doc:
-#         if not word in stopwords.words('english'):
-#             new_term_vector.append(word)
-#     tokenized_docs_no_stopwords.append(new_term_vector)
-#
-# print(tokenized_docs_no_stopwords);
-# end = time.time();
-# print(end-start);
+start = time.time()
+## remove stop words: THIS IS THE MOST EXPENSIVE PART cuz it is O(n^2)
+tokenized_docs_no_stopwords = []
+for doc in tokenized_docs_no_punctuation:
+    new_term_vector = []
+    for word in doc:
+        if not word in stopwords.words('english'):
+            new_term_vector.append(word)
+    tokenized_docs_no_stopwords.append(new_term_vector)
+
+print(tokenized_docs_no_stopwords);
+end = time.time();
+print(end-start);
 
 ## stemming and lemmatizing
 porter = PorterStemmer()
 snowball = SnowballStemmer('english')
 wordnet = WordNetLemmatizer()
 
-preprocessed_docs = []
-tokenized_docs_no_stopwords = tokenized_docs_no_punctuation;
-for doc in tokenized_docs_no_stopwords:
-    final_doc = []
-    for word in doc:
-        final_doc.append(porter.stem(word))
-        #final_doc.append(snowball.stem(word))
-        #final_doc.append(wordnet.lemmatize(word)) #note that lemmatize() can also takes part of speech as an argument!
-    preprocessed_docs.append(final_doc)
+preprocessed_docs = tokenized_docs_no_stopwords;
+# #tokenized_docs_no_stopwords = tokenized_docs_no_punctuation;
+# for doc in tokenized_docs_no_stopwords:
+#     final_doc = []
+#     for word in doc:
+#         final_doc.append(porter.stem(word))
+#         #final_doc.append(snowball.stem(word))
+#         #final_doc.append(wordnet.lemmatize(word)) #note that lemmatize() can also takes part of speech as an argument!
+#     preprocessed_docs.append(final_doc)
 
 print(preprocessed_docs)
 
@@ -106,10 +104,11 @@ print(preprocessed_docs)
 
 raw_preprocessed = [' '.join(x) for x in preprocessed_docs];
 
+
 out_dir = settings.ROOT_DIR+'\\processed_data\\'
 ## save the corpus (just a list of lists of words in the document
-file = open(out_dir+'Guardian_epoch_1_with_labels.p', 'wb')
+file = open(out_dir+'Guardian_epoch_1_with_labels_no_lemma.p', 'wb')
 pickle.dump([preprocessed_docs, section_label], file);
 
-file = open(out_dir+'Guardian_raw_epoch_1_with_labels.p', 'wb')
+file = open(out_dir+'Guardian_raw_epoch_1_with_labels_no_lemma.p', 'wb')
 pickle.dump([raw_preprocessed, section_label], file);

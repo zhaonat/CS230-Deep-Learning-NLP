@@ -1,6 +1,8 @@
 /financial_times/
 /treehacks-energy/
 /processed_data/
+/word_embeddings/
+
 *.p
 *.csv
 *.json

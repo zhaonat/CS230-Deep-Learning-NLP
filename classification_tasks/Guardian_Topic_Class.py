@@ -36,7 +36,7 @@ onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
 num_labels = len(set(labels));
 
 # Use tokenizer
-num_word = 1000
+num_word = 500
 tokenizer = Tokenizer(num_words=num_word)
 tokenizer.fit_on_texts(guardian_corpus)
 sequences = tokenizer.texts_to_sequences(guardian_corpus)
