@@ -31,7 +31,8 @@ parser.add_argument('--LSTM2_dims', type=int, nargs='+', default=[128, 128])
 parser.add_argument('--DENSE_dims', type=int, nargs='*', default=[128])
 parser.add_argument('--lr', type=float, default=0.005)
 parser.add_argument('--d', type=float, default=0., help='dropout rate')
-parser.add_argument('--rd', type=float, default=0., help='dropout rate')
+parser.add_argument('--rd', type=float, default=0., help='recurrent dropout rate')
+parser.add_argument('--dd', type=float, default=0., help='dense layer dropout rate')
 args = parser.parse_args()
 print(args)
 
@@ -78,6 +79,7 @@ for d in LSTM2_dims:
 model.add(GlobalAveragePooling1D()) ## Global Pooling
 
 for d in DENSE_dims:
+    model.add(Dropout(args.dd))
     model.add(Dense(d, activation='relu'))
 model.add(Dense(num_labels, activation='softmax'))
 
