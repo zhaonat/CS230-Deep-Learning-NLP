@@ -53,7 +53,7 @@ onehot_encoded = np.load(os.path.join(args.input_dir, 'labels.npy'))
 num_word = 1000
 num_labels = len(np.unique(onehot_encoded, axis=0))
 print(num_labels)
-batch_size = 10
+batch_size = 200
 
 
 model = Sequential()
@@ -82,6 +82,11 @@ print(data.shape, onehot_encoded.shape)
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 set_session(tf.Session(config=config))
+
+if 'session' in locals() and session is not None:
+    print('Close interactive session')
+    session.close()
+
 
 if args.pretrain is not None:
     model.load_weights(args.pretrain)
