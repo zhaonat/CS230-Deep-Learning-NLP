@@ -1,6 +1,7 @@
 import numpy as np
 import pickle
 import settings
+import matplotlib.pyplot as plt
 
 file = settings.ROOT_DIR + '\\processed_data\\Guardian_epoch_1_with_labels.p';
 
@@ -16,7 +17,10 @@ for doc in data:
 print(np.mean(lengths));
 print(np.max(lengths));
 print(np.min(lengths));
-
+print(np.sqrt(np.var(lengths)))
+plt.figure();
+plt.hist(lengths, 30)
+plt.show()
 ## label histogram:
 label_dict = dict();
 for label in labels:
@@ -33,7 +37,6 @@ for i in label_dict.keys():
     else:
         print(str(i)+', '+str(label_dict[i]));
 
-
 print('num labels with less than 50 examples: '+str(counter))
 
 ## print sample
@@ -42,3 +45,5 @@ sample = np.random.randint(0, 1000, 10);
 for i in sample:
     print(labels[i])
     print(data[i])
+
+
