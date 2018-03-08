@@ -103,7 +103,7 @@ model.compile(optimizer=adam, loss='categorical_crossentropy', metrics=['accurac
 
 print("Traning Model...")
 history = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, verbose=True, validation_data=(X_test, Y_test))  # starts training
-
+model.save('guardian_CNN.h5')
 plt.figure(figsize = (20,15))
 
 

@@ -61,13 +61,14 @@ sequence_length = MAX_SEQUENCE_LENGTH
 
 # we should really know what Tokenizer does...
 texts = data;
-tokenizer = Tokenizer(num_words=MAX_NB_WORDS)
-tokenizer.fit_on_texts(texts)
-sequences = tokenizer.texts_to_sequences(texts)
-
-## save the tokenizer for future use
-handle = open('economist_tokens.p', 'wb');
-pickle.dump([tokenizer, sequences], handle, protocol=pickle.HIGHEST_PROTOCOL)
+# tokenizer = Tokenizer(num_words=MAX_NB_WORDS)
+# tokenizer.fit_on_texts(texts)
+# sequences = tokenizer.texts_to_sequences(texts)
+#
+# ## save the tokenizer for future use
+# handle = open('economist_tokens.p', 'wb');
+# pickle.dump([tokenizer, sequences], handle, protocol=pickle.HIGHEST_PROTOCOL)
+[tokenizer, sequences] = pickle.load(open('economist_tokens.p', 'rb'))
 
 word_index = tokenizer.word_index
 print('Found %s unique tokens.' % len(word_index))
@@ -84,7 +85,7 @@ np.random.shuffle(indices)
 data = data[indices]
 labels = labels[indices]
 num_labels = len(set(list(labels)));
-*.
+
 VALIDATION_SPLIT = 0.2;
 nb_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
 
