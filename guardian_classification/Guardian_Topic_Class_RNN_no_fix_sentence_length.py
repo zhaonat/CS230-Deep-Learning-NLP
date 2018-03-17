@@ -6,7 +6,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 import keras
 from keras import backend
-from keras.layers import Embedding, LSTM, Dense, Conv1D, MaxPooling1D, Dropout, Activation, Reshape, InputLayer, Lambda, GlobalAveragePooling1D
+from keras.layers import Embedding, LSTM, Dense, Conv1D, MaxPooling1D, Dropout, Activation, Reshape, InputLayer, Lambda, GlobalAveragePooling1D, Bidirectional
 from keras.models import Sequential, load_model
 from keras.preprocessing.sequence import pad_sequences
 import matplotlib.pyplot as plt
@@ -33,6 +33,9 @@ parser.add_argument('--lr', type=float, default=0.005)
 parser.add_argument('--d', type=float, default=0., help='dropout rate')
 parser.add_argument('--rd', type=float, default=0., help='recurrent dropout rate')
 parser.add_argument('--dd', type=float, default=0., help='dense layer dropout rate')
+parser.add_argument('--kr', type=float, default=0., help='kernel_regularizer')
+parser.add_argument('--rr', type=float, default=0., help='recurrent_regularizer')
+parser.add_argument('--ar', type=float, default=0., help='acticity_regularizer')
 args = parser.parse_args()
 print(args)
 
@@ -45,6 +48,9 @@ DENSE_dims = args.DENSE_dims
 lr = args.lr
 dropout = args.d
 recurrent_dropout = args.rd
+kr = args.kr
+rr = args.rr
+ar = args.ar
 
 data = np.load(os.path.join(args.input_dir, 'docs.npy'))
 onehot_encoded = np.load(os.path.join(args.input_dir, 'labels.npy'))
@@ -53,7 +59,7 @@ onehot_encoded = np.load(os.path.join(args.input_dir, 'labels.npy'))
 num_word = 1000
 num_labels = len(np.unique(onehot_encoded, axis=0))
 print(num_labels)
-batch_size = 200
+batch_size = 300
 
 
 model = Sequential()
@@ -61,19 +67,19 @@ model.add(Embedding(num_word, word_vector_dim, input_length=max_words))
 
 #model.add(Dense(12, activation = 'relu', input_dim = (2001, 41, 1)))
 for d in LSTM1_dims:
-    model.add(LSTM(d, dropout=dropout, recurrent_dropout=recurrent_dropout, return_sequences=True))
+    model.add(Bidirectional(LSTM(d, dropout=dropout, recurrent_dropout=recurrent_dropout, kernel_regularizer = regularizers.l2(kr), recurrent_regularizer = regularizers.l2(rr), return_sequences=True)))
 #model.add(GlobalAveragePooling1D()) ## Global Pooling
 
 #model.add(Reshape((batch_size, max_sentences, max_words), input_shape=(batch_size*max_sentences, max_words)))
 #model.add(Lambda(backend_reshape, output_shape=(max_sentences, LSTM1_dims[-1]), arguments={'shape': (-1, max_sentences, LSTM1_dims[-1])}))
 for d in LSTM2_dims:
-    model.add(LSTM(d, dropout=dropout, recurrent_dropout=recurrent_dropout, return_sequences=True))
+    model.add(Bidirectional(LSTM(d, dropout=dropout, recurrent_dropout=recurrent_dropout, kernel_regularizer = regularizers.l2(kr), recurrent_regularizer = regularizers.l2(rr),  return_sequences=True)))
 model.add(GlobalAveragePooling1D()) ## Global Pooling
 
 for d in DENSE_dims:
     model.add(Dropout(args.dd))
     model.add(Dense(d, activation='relu'))
-model.add(Dense(num_labels, activation='softmax'))
+model.add(Dense(num_labels, activation='softmax', activity_regularizer = regularizers.l2(ar)))
 
 opt = optimizers.adam(lr=lr)
 model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
