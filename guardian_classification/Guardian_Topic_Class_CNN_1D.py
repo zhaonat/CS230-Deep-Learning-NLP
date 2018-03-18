@@ -40,9 +40,8 @@ guardian = dir+'Guardian_raw_epoch_1_with_labels.p';
 [guardian_corpus, labels] = pickle.load(open(guardian, 'rb'));
 count_label = Counter(labels)
 for i in range(len(guardian_corpus)):
-    if Counter(labels)[labels[i]] < 50: #here we do the label condensation IN SCRIPT
+    if Counter(labels)[labels[i]] < 50:
         labels[i] = 'other'
-print(set(labels))
 
 #convert labels to one hot encoding
 label_encoder = LabelEncoder()
@@ -58,24 +57,22 @@ onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
 num_labels = len(set(labels));
 
 # Use tokenizer
-num_word = 7000 # will be the input dimensions
+num_word = 3000 # will be the input dimensions
 tokenizer = Tokenizer(num_words=num_word)
 tokenizer.fit_on_texts(guardian_corpus)
 sequences = tokenizer.texts_to_sequences(guardian_corpus)
-pickle.dump([tokenizer, sequences], open('Guardian_labelled_tokens.p', 'wb'));
-
 data = pad_sequences(sequences, maxlen=max_features)
 
 # Data preparing
 X_train, X_test, Y_train, Y_test = train_test_split(data,onehot_encoded,test_size=0.15)
 sequence_length = X_train.shape[1]
 embedding_dim = 64 # can be changed
-filter_sizes = [2,3,4]
+filter_sizes = [3,4,5]
 num_filters = [100,100,100]
 drop = 0.3
 
 epochs = 25
-batch_size = 20
+batch_size = 100
 
 ## this is our features
 # now fit a neural net

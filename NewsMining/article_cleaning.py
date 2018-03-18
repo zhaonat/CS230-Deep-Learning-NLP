@@ -104,7 +104,8 @@ def read_Guardian(data_path):
     data = pd.read_csv(data_path, index_col=0, encoding='utf-8');
 
     doc_counter = 0
-    num_examples = 100000000
+    num_examples = 1000000
+    #num_examples = 10
     for article in data.T.columns:
         print(doc_counter)
         if doc_counter >= num_examples:
@@ -121,31 +122,69 @@ def read_Guardian(data_path):
 
 def process_dataset(document_data, remove_punc=False, remove_sw=True, stem=True, sent=True):
     ## tokenization step
+    print('0'  + '-' * 80)
     document_data = [word_tokenize(doc) for doc in document_data]
 
     ## remove punctuation
+    print('1'  + '-' * 80)
     if remove_punc:
         document_data = remove_punctuation(document_data)
 
     ## remove stop words
+    print('2'  + '-' * 80)
     if remove_sw:
         document_data = remove_stop_words(document_data)
 
     ## stemming and lemmatizing
+    print('3'  + '-' * 80)
     if stem:
         document_data = stemming_and_lemmatizing(document_data)
 
     ## convert preprocessed doc back into sentences
-
+    print('4'  + '-' * 80)
     preprocessed_articles = [unidecode(' '.join(x)) for x in document_data];
     if not sent:
         return preprocessed_articles
+    print('5'  + '-' * 80)
     preprocessed_sentences = [sent_tokenize(x) for x in preprocessed_articles]
     return preprocessed_sentences
 
 def process_to_array(guardian_corpus, labels):
+    num_word = 1000
     max_words = 20  # number of words in a sentence
     max_sentences = 20 # number of sentences in an article
+
+    print('6' + '-' * 80)
+    ### merge labels with less than 50 samples to be "others"
+    labels = [x.encode('UTF8') for x in labels]
+    labels_dict = dict((x,labels.count(x)) for x in set(labels))
+    others = []
+    for label in labels_dict:
+        if labels_dict[label] < 50:
+            others.append(label)
+
+    new_labels = ['others' if x in others else x for x in labels]
+    labels = labels
+    num_labels = len(set(labels))
+
+
+    print('7'  + '-' * 80)
+    ### convert labels to one hot encoding
+    label_encoder = LabelEncoder()
+    integer_encoded = label_encoder.fit_transform(labels)
+    onehot_encoder = OneHotEncoder(sparse=False)
+    integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
+    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
+
+
+    print('8'  + '-' * 80)
+    tokenizer = Tokenizer(num_words=num_word)
+    '''
+    # generate document matrix
+    data = np.ones((len(guardian_corpus), max_sentences, max_words))
+    for i, article in enumerate(guardian_corpus):
+        tokenizer.fit_on_text(article)
+    '''
 
     ### pad/truncate sentences to make sure each article has same number of sentences
     guardian_pad_sent = []
@@ -161,32 +200,10 @@ def process_to_array(guardian_corpus, labels):
     guardian_corpus = guardian_pad_sent
 
 
-    ### merge labels with less than 50 samples to be "others"
-    labels = [x.encode('UTF8') for x in labels]
-    labels_dict = dict((x,labels.count(x)) for x in set(labels))
-    others = []
-    for label in labels_dict:
-        if labels_dict[label] < 50:
-            others.append(label)
-
-    new_labels = ['others' if x in others else x for x in labels]
-    labels = labels
-    num_labels = len(set(labels))
-
-
-    ### convert labels to one hot encoding
-    label_encoder = LabelEncoder()
-    integer_encoded = label_encoder.fit_transform(labels)
-    onehot_encoder = OneHotEncoder(sparse=False)
-    integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
-    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
-
-
     ### tokenize and pad/truncate words to make sure each sentence (not article) has same number of words
-    num_word = 1000
-    tokenizer = Tokenizer(num_words=num_word)
 
     data = []
+    print('9'  + '-' * 80)
 
     for article in guardian_corpus:
         tokenizer.fit_on_texts(article)
@@ -195,6 +212,7 @@ def process_to_array(guardian_corpus, labels):
         # pad/truncate words to make sure each sentence has same number of words
         new_article = pad_sequences(sequences, maxlen=max_words, padding='pre', truncating='pre')
         data.append(new_article)
+    print('10'  + '-' * 80)
 
 
     data = np.stack(data, axis = 0)

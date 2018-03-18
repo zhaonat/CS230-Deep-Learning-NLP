@@ -18,7 +18,7 @@ def remove_tags(text):
     return TAG_RE.sub('', text)
 
 
-dir = settings.ROOT_DIR+'\\Gaurdian\\'
+dir = settings.ROOT_DIR+'\\Guardian_corpus\\'
 
 file = dir+'Guardian_10K_epoch_1.csv';
 
