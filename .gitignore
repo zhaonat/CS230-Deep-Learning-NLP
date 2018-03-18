@@ -2,6 +2,9 @@
 /treehacks-energy/
 /processed_data/
 /word_embeddings/
+/saved_models/
+/economist_corpus/
+/Guardian_corpus/
 
 *.p
 *.csv
@@ -9,3 +12,5 @@
 *.png
 *.jpeg
 *.tiff
+*.h5
+
