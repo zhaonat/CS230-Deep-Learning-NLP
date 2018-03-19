@@ -14,13 +14,17 @@ from sklearn.preprocessing import scale
 
 import pickle
 from sklearn.decomposition import PCA, NMF
+import os
 
 dir = settings.ROOT_DIR+'\\processed_data\\'
-
+econ_dir = os.path.join(settings.ROOT_DIR, 'economist_corpus');
 guardian = dir+'Guardian_raw_epoch_1_with_labels.p';
 guardian = dir+'condensed_label_guardian_dataset.p';
+econ = os.path.join(econ_dir,'econ_corpus_raw.p');
 
-[guardian_corpus, labels] = pickle.load(open(guardian, 'rb'));
+#[guardian_corpus, labels] = pickle.load(open(guardian, 'rb'));
+[guardian_corpus, labels] = pickle.load(open(econ, 'rb'));
+
 print(guardian_corpus[0])
 print(len(set(labels)))
 #process every article
@@ -31,7 +35,7 @@ le.fit(labels);
 y = le.fit_transform(labels);
 
 # Use tf (raw term count) features for LDA.
-n_features = 300;
+n_features = 1000;
 print("Extracting tf features for LDA...")
 tf_vectorizer = CountVectorizer(max_features=n_features,
                                 stop_words='english')

@@ -17,24 +17,27 @@ from keras.layers import Embedding
 #find the pre-trained GLOVE
 GLOVE_DIR = settings.ROOT_DIR+'\\word_embeddings\\glove.6B\\' #when feeding word embeddings, don't lemmatize
 
-dir = settings.ROOT_DIR+'\\processed_data\\'
-file = 'Econ_corpus_no_process.p'
+dir = os.path.join(settings.ROOT_DIR,'economist_corpus');
+file = 'Econ_reduced_length_corpus.p'
 #file = 'Econ_corpus_raw_10k.p'
 
-[data, labels] = pickle.load(open(dir+file, 'rb'));
+[data, labels] = pickle.load(open(os.path.join(dir,file), 'rb'));
 
+# sample  = np.random.randint(0, len(labels), 100000);
+# data =  [data[index] for index in sample]
+# labels = [labels[index] for index in sample];
 
-# ## FILTER OUT SMALL LENGTH DATA SAMPLES
-remove_index = list();
-num_removed = 0;
-for i in range(len(labels)):
-    if(len(data[i]) < 1000):
-        remove_index.append(i);
-        num_removed+=1;
-data = [i for j, i in enumerate(data) if j not in remove_index];
-labels = [i for j, i in enumerate(labels) if j not in remove_index];
-print('number of articles removed: '+str(num_removed))
-print(data)
+# # ## FILTER OUT SMALL LENGTH DATA SAMPLES
+# remove_index = list();
+# num_removed = 0;
+# for i in range(len(labels)):
+#     if(len(data[i]) < 1000):
+#         remove_index.append(i);
+#         num_removed+=1;
+# data = [i for j, i in enumerate(data) if j not in remove_index];
+# labels = [i for j, i in enumerate(labels) if j not in remove_index];
+# print('number of articles removed: '+str(num_removed))
+# print(data)
 
 
 #convert labels
@@ -52,7 +55,7 @@ numeric_labels = list();
 for label in labels:
     numeric_labels.append(label_to_num[label]);
 labels = numeric_labels;
-
+num_labels = len(set(list(labels)))
 
 MAX_NB_WORDS = 2500; #I would bet that if we set look at the training set, too many stop words are probably there
 
@@ -61,14 +64,14 @@ sequence_length = MAX_SEQUENCE_LENGTH
 
 # we should really know what Tokenizer does...
 texts = data;
-# tokenizer = Tokenizer(num_words=MAX_NB_WORDS)
-# tokenizer.fit_on_texts(texts)
-# sequences = tokenizer.texts_to_sequences(texts)
-#
-# ## save the tokenizer for future use
-# handle = open('economist_tokens.p', 'wb');
-# pickle.dump([tokenizer, sequences], handle, protocol=pickle.HIGHEST_PROTOCOL)
-[tokenizer, sequences] = pickle.load(open('economist_tokens.p', 'rb'))
+tokenizer = Tokenizer(num_words=MAX_NB_WORDS)
+tokenizer.fit_on_texts(texts)
+sequences = tokenizer.texts_to_sequences(texts)
+
+## save the tokenizer for future use
+handle = open('small_docs_economist_tokens.p', 'wb');
+pickle.dump([tokenizer, sequences], handle, protocol=pickle.HIGHEST_PROTOCOL)
+#[tokenizer, sequences] = pickle.load(open('economist_tokens.p', 'rb'))
 
 word_index = tokenizer.word_index
 print('Found %s unique tokens.' % len(word_index))
@@ -84,7 +87,6 @@ indices = np.arange(data.shape[0])
 np.random.shuffle(indices)
 data = data[indices]
 labels = labels[indices]
-num_labels = len(set(list(labels)));
 
 VALIDATION_SPLIT = 0.2;
 nb_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
@@ -161,7 +163,7 @@ dropout = Dropout(drop)(flatten)
 dense1 = Dense(128, activation = 'relu')(dropout)
 ## ==================================================================
 
-output = Dense(num_labels, activation='softmax')(dense1)
+output = Dense(num_labels+1, activation='softmax')(dense1)
 model = Model(inputs=inputs, outputs=output)
 
 adam = Adam(lr=1e-3, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)

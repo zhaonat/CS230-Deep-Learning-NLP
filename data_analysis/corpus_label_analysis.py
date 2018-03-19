@@ -4,9 +4,10 @@ import settings
 import matplotlib.pyplot as plt
 
 dir = settings.ROOT_DIR+'\\processed_data\\'
-file = 'Econ_corpus_raw.p'
-file = 'Guardian_epoch_1_with_labels.p';
-[data, labels] = pickle.load(open(dir+file, 'rb'));
+econ_dir = settings.ROOT_DIR+'\\economist_corpus\\'
+file = 'Econ_reduced_length_corpus.p'
+#file = 'Guardian_epoch_1_with_labels.p';
+[data, labels] = pickle.load(open(econ_dir+file, 'rb'));
 
 ## FILTER OUT SMALL LENGTH DATA SAMPLES
 less_50_count = 0;

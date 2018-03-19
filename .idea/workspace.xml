@@ -6,22 +6,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c00c13f8-2ad9-4665-aa43-c762a178fea9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/saved_model_validation.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/economist_classification/fast_LSTM_weights.h5" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NewsMining/economist_mining/economist_splitting.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activation_visualization/activation_extractors.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/activation_visualization/activation_vis_test.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/economist_advanced_class/Attention_Layer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/economist_advanced_class/tdd.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/transfer_learning/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/transfer_learning/transfer_economist_to_guardian.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/visualization/Corpus_Similarity_t-SNE.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/visualization/t-SNE_plot_formatting.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/economist_advanced_class/hiearchical_attention_encoder_decoder.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsMining/Gaurdian_mining/guardian_article_text_mining.py" afterPath="$PROJECT_DIR$/NewsMining/Gaurdian_mining/guardian_article_text_mining.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsMining/Gaurdian_mining/guardian_article_text_mining_dates.py" afterPath="$PROJECT_DIR$/NewsMining/Gaurdian_mining/guardian_article_text_mining_dates.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Naive_Bayes/Naive_Bayes.py" afterPath="$PROJECT_DIR$/Naive_Bayes/Naive_Bayes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_analysis/corpus_label_analysis.py" afterPath="$PROJECT_DIR$/data_analysis/corpus_label_analysis.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/economist_advanced_class/hiearchical_attention.py" afterPath="$PROJECT_DIR$/economist_advanced_class/hiearchical_attention.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/economist_classification/economist_CNN_with_GloVE.py" afterPath="$PROJECT_DIR$/economist_classification/economist_CNN_with_GloVE.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class.py" afterPath="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class_2layers_architecture.py" afterPath="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_2layers_architecture.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class_CNN_1D.py" afterPath="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class_CNN_1D_multilayer_V3.py" afterPath="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D_multilayer_V3.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class_CNN_1D_with_GloVE.py" afterPath="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D_with_GloVE.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class_RNN_2layers_architecture.py" afterPath="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_RNN_2layers_architecture.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class_RNN_2layers_architecture_avgpool.py" afterPath="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_RNN_2layers_architecture_avgpool.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class_RNN_no_fix_sentence_length.py" afterPath="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_RNN_no_fix_sentence_length.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/__init__.py" afterPath="$PROJECT_DIR$/guardian_classification/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classification_tasks/guardian_vs_FT.py" afterPath="$PROJECT_DIR$/guardian_classification/guardian_vs_FT.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visualization/t-SNE.py" afterPath="$PROJECT_DIR$/visualization/t-SNE.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,37 +32,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="economist_cleaning.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NewsMining/economist_mining/economist_cleaning.py">
+      <file leaf-file-name="activation_extractors.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activation_visualization/activation_extractors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+            <state relative-caret-position="157">
+              <caret line="38" column="4" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activation_vis_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activation_visualization/activation_vis_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hiearchical_attention.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/economist_advanced_class/hiearchical_attention.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="156" column="59" lean-forward="true" selection-start-line="156" selection-start-column="59" selection-end-line="156" selection-end-column="59" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#39#57#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="economist_label_analysis.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_analysis/economist_label_analysis.py">
+      <file leaf-file-name="Guardian_Topic_Class_CNN_1D_with_GloVE.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D_with_GloVE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="10" />
+            <state relative-caret-position="990">
+              <caret line="64" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t-SNE_plot_formatting.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visualization/t-SNE_plot_formatting.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="26" column="29" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="26" selection-end-column="29" />
               <folding>
-                <element signature="e#1#14#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generate_article_samples.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_analysis/generate_article_samples.py">
+      <file leaf-file-name="Corpus_Similarity_t-SNE.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visualization/Corpus_Similarity_t-SNE.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transfer_economist_to_guardian.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/transfer_learning/transfer_economist_to_guardian.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,51 +114,9 @@
         <entry file="file://$PROJECT_DIR$/economist_classification/economist_CNN_with_GloVE.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
-              <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
+              <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Guardian_Topic_Class_CNN_1D.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="96" column="25" lean-forward="true" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="saved_model_validation.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/saved_model_validation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="analyze_mislabels.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/economist_classification/analyze_mislabels.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="economist_fast_LSTM.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/economist_classification/economist_fast_LSTM.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="97" column="24" lean-forward="false" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
-              <folding>
-                <element signature="e#1#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,6 +137,7 @@
       <find>y_true</find>
       <find>epochs</find>
       <find>num_labels</find>
+      <find>38num</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,19 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/processed_data/settings.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/embeddings/word2vec.py" />
-        <option value="$PROJECT_DIR$/NewsMining/text_processing_functions.py" />
-        <option value="$PROJECT_DIR$/NewsMining/article_mining/article_processing_notebook.ipynb" />
-        <option value="$PROJECT_DIR$/experiments/20NewsGroup.py" />
-        <option value="$PROJECT_DIR$/NewsMining/article_mining/document_frequency_matrix.py" />
-        <option value="$PROJECT_DIR$/NewsMining/article_mining/article_to_data.py" />
-        <option value="$PROJECT_DIR$/NewsMining/corpus_processing/document_frequency_matrix.py" />
-        <option value="$PROJECT_DIR$/unsupervised/latent_dirichlet_allocation.py" />
-        <option value="$PROJECT_DIR$/unsupervised/biclustering.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/NewsMining/article_mining/article_cleaning.py" />
         <option value="$PROJECT_DIR$/embeddings/tensorflow_embedding.py" />
         <option value="$PROJECT_DIR$/classification_tasks/RNN_with_Tensorflow.py" />
         <option value="$PROJECT_DIR$/NewsMining/Gaurdian_mining/article_text_mining.py" />
@@ -170,7 +158,6 @@
         <option value="$PROJECT_DIR$/classification_tasks/FT_time_classification.py" />
         <option value="$PROJECT_DIR$/experiments/filters.py" />
         <option value="$PROJECT_DIR$/NewsMining/Gaurdian_mining/label_condensation.py" />
-        <option value="$PROJECT_DIR$/visualization/t-SNE.py" />
         <option value="$PROJECT_DIR$/classification_tasks/Guardian_Topic_Class.py" />
         <option value="$PROJECT_DIR$/classification_tasks/CNN_attempt.py" />
         <option value="$PROJECT_DIR$/classification_tasks/CNN_guardian.py" />
@@ -193,15 +180,29 @@
         <option value="$PROJECT_DIR$/economist_classification/economist_fast_LSTM.py" />
         <option value="$PROJECT_DIR$/data_analysis/economist_label_analysis.py" />
         <option value="$PROJECT_DIR$/economist_classification/analyze_mislabels.py" />
-        <option value="$PROJECT_DIR$/economist_classification/economist_CNN_with_GloVE.py" />
         <option value="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D.py" />
         <option value="$PROJECT_DIR$/word_embeddings/saved_model_validation.py" />
+        <option value="$PROJECT_DIR$/Naive_Bayes/Naive_Bayes.py" />
+        <option value="$PROJECT_DIR$/visualization/t-SNE.py" />
+        <option value="$PROJECT_DIR$/economist_classification/economist_CNN_with_GloVE.py" />
+        <option value="$PROJECT_DIR$/visualization/Corpus_Similarity_t-SNE.py" />
+        <option value="$PROJECT_DIR$/data_analysis/corpus_label_analysis.py" />
+        <option value="$PROJECT_DIR$/NewsMining/economist_mining/economist_splitting.py" />
+        <option value="$PROJECT_DIR$/visualization/t-SNE_plot_formatting.py" />
+        <option value="$PROJECT_DIR$/economist_advanced_class/tdd.py" />
+        <option value="$PROJECT_DIR$/economist_advanced_class/Attention_Layer.py" />
+        <option value="$PROJECT_DIR$/economist_advanced_class/hiearchical_attention_encoder_decoder.py" />
+        <option value="$PROJECT_DIR$/economist_advanced_class/hiearchical_attention_test.py" />
+        <option value="$PROJECT_DIR$/activation_visualization/activation_extractors.py" />
+        <option value="$PROJECT_DIR$/activation_visualization/activation_vis_test.py" />
+        <option value="$PROJECT_DIR$/transfer_learning/transfer_economist_to_guardian.py" />
+        <option value="$PROJECT_DIR$/economist_advanced_class/hiearchical_attention.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="73" />
-    <option name="width" value="1294" />
+    <option name="width" value="2307" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -231,7 +232,12 @@
             <path>
               <item name="CS230" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS230" type="462c0819:PsiDirectoryNode" />
-              <item name="economist_classification" type="462c0819:PsiDirectoryNode" />
+              <item name="saved_models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS230" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS230" type="462c0819:PsiDirectoryNode" />
+              <item name="transfer_learning" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -247,10 +253,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\Classes\CS230\saved_models" />
+      <recent name="D:\Documents\Classes\CS230\economist_corpus" />
+      <recent name="D:\Documents\Classes\CS230\Guardian_corpus" />
+      <recent name="D:\Documents\Classes\CS230\visualization" />
       <recent name="D:\Documents\Classes\CS230" />
-      <recent name="D:\Documents\Classes\CS230\figures" />
-      <recent name="D:\Documents\Classes\CS230\processed_data" />
-      <recent name="D:\Documents\Classes\CS230\NewsMining\corpus_processing" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\Classes\CS230\saved_models" />
@@ -272,7 +278,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Guardian_Topic_Class_CNN_1D">
+  <component name="RunManager" selected="Python.hiearchical_attention">
     <configuration name="CS230" type="Python.Ipnb" factoryName="Jupyter Notebook">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,106 +295,106 @@
       <option name="ipnbHost" value="127.0.0.1" />
       <option name="ipnbPort" value="8888" />
     </configuration>
-    <configuration name="Guardian_Topic_Class_CNN_1D" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="activation_extractors" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/guardian_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/activation_visualization" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS230" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/activation_visualization/activation_extractors.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="economist_CNN_with_GloVE" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="activation_vis_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/economist_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/activation_visualization" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS230" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/economist_classification/economist_CNN_with_GloVE.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/activation_visualization/activation_vis_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="economist_fast_LSTM" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="hiearchical_attention" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/economist_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/economist_advanced_class" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS230" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/economist_classification/economist_fast_LSTM.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/economist_advanced_class/hiearchical_attention.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="economist_label_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="hiearchical_attention_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_analysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/economist_advanced_class" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS230" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_analysis/economist_label_analysis.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/economist_advanced_class/hiearchical_attention_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="tokenizer_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="transfer_economist_to_guardian" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_analysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/transfer_learning" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS230" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_analysis/tokenizer_analysis.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/transfer_learning/transfer_economist_to_guardian.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Jupyter Notebook.CS230" />
-      <item index="1" class="java.lang.String" itemvalue="Python.economist_fast_LSTM" />
-      <item index="2" class="java.lang.String" itemvalue="Python.economist_CNN_with_GloVE" />
-      <item index="3" class="java.lang.String" itemvalue="Python.tokenizer_analysis" />
-      <item index="4" class="java.lang.String" itemvalue="Python.economist_label_analysis" />
-      <item index="5" class="java.lang.String" itemvalue="Python.Guardian_Topic_Class_CNN_1D" />
+      <item index="1" class="java.lang.String" itemvalue="Python.hiearchical_attention_test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.activation_extractors" />
+      <item index="3" class="java.lang.String" itemvalue="Python.activation_vis_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.hiearchical_attention" />
+      <item index="5" class="java.lang.String" itemvalue="Python.transfer_economist_to_guardian" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Guardian_Topic_Class_CNN_1D" />
-        <item index="1" class="java.lang.String" itemvalue="Python.economist_CNN_with_GloVE" />
-        <item index="2" class="java.lang.String" itemvalue="Python.economist_label_analysis" />
-        <item index="3" class="java.lang.String" itemvalue="Python.economist_fast_LSTM" />
-        <item index="4" class="java.lang.String" itemvalue="Python.tokenizer_analysis" />
+        <item index="0" class="java.lang.String" itemvalue="Python.hiearchical_attention" />
+        <item index="1" class="java.lang.String" itemvalue="Python.transfer_economist_to_guardian" />
+        <item index="2" class="java.lang.String" itemvalue="Python.activation_vis_test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.activation_extractors" />
+        <item index="4" class="java.lang.String" itemvalue="Python.hiearchical_attention_test" />
       </list>
     </recent_temporary>
   </component>
@@ -408,13 +414,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1518283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15341812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -425,8 +430,29 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15421304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -441,140 +467,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NewsMining/Gaurdian_mining/guardian_article_text_mining_dates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NewsMining/FT_article_mining/article_cleaning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="112" column="36" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="112" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NewsMining/FT_article_mining/article_from_different_year_sample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classification_tasks/FT vs Guardian RNN model accuracy.png" />
-    <entry file="file://$PROJECT_DIR$/guardian_classification/guardian_vs_FT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="40" column="59" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classification_tasks/FT_time_classification.py" />
-    <entry file="file://$PROJECT_DIR$/classification_tasks/guardian_time_classification.py" />
-    <entry file="file://$PROJECT_DIR$/experiments/filters.py" />
-    <entry file="file://$PROJECT_DIR$/classification_tasks/FT time RNN model accuracy.png" />
-    <entry file="file://$PROJECT_DIR$/processed_data/condensed_label_guardian_dataset.p">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visualization/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unsupervised/latent_dirichlet_allocation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="58" column="11" lean-forward="false" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visualization/t-SNE.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="49" column="10" lean-forward="true" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classification_tasks/CNN_attempt.py" />
-    <entry file="file://$PROJECT_DIR$/classification_tasks/CNN_guardian.py" />
-    <entry file="file://$PROJECT_DIR$/Naive_Bayes.py" />
-    <entry file="file://$PROJECT_DIR$/NewsMining/Gaurdian_mining/guardian_article_text_mining.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="112" column="62" lean-forward="false" selection-start-line="112" selection-start-column="62" selection-end-line="112" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D_multilayer_V3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2662">
-          <caret line="141" column="28" lean-forward="false" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D_with_GloVE.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processed_data/Econ_corpus_no_process.p">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processed_data/Econ_corpus_raw.p">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Naive_Bayes/Naive_Bayes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NewsMining/Gaurdian_mining/label_condensation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/processed_data/condensed_label_economist_dataset.p">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="88">
-          <caret line="0" column="1009" lean-forward="false" selection-start-line="0" selection-start-column="1009" selection-end-line="0" selection-end-column="1009" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_analysis/label_condensation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -600,9 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -632,9 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2266">
           <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="120" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -642,9 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
           <caret line="62" column="15" lean-forward="false" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -652,7 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,17 +543,7 @@
         <state relative-caret-position="161">
           <caret line="97" column="24" lean-forward="false" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
           <folding>
-            <element signature="e#1#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NewsMining/economist_mining/economist_cleaning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#1#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -680,9 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="10" />
-          <folding>
-            <element signature="e#1#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,9 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,7 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,29 +589,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/economist_classification/economist_CNN_with_GloVE.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="96" column="25" lean-forward="true" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/saved_models/fast_LSTM_weights.h5">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +607,220 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_advanced_class/attention_CNN.h5">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_advanced_class/attention_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NewsMining/economist_mining/economist_to_sentences.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NewsMining/economist_mining/economist_cleaning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="106" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_classification/economist_multilayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_advanced_class/CNN_attention.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1486">
+          <caret line="208" column="33" lean-forward="false" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_advanced_class/birdirectional_time_distributed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="166" column="43" lean-forward="false" selection-start-line="166" selection-start-column="43" selection-end-line="166" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_corpus/Econ_reduced_length_corpus.p">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visualization/t-sne_economist_embedding.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visualization/reformatted_economist_t-SNE.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visualization/t-SNE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="46" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Guardian_corpus/condensed_label_guardian_dataset.p">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_analysis/corpus_label_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NewsMining/economist_mining/economist_splitting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1210">
+          <caret line="66" column="93" lean-forward="false" selection-start-line="66" selection-start-column="93" selection-end-line="66" selection-end-column="93" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Naive_Bayes/Naive_Bayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_classification/economist_CNN_with_GloVE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_advanced_class/tdd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visualization/Corpus_Similarity_t-SNE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_advanced_class/Attention_Layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="308" column="29" lean-forward="false" selection-start-line="308" selection-start-column="29" selection-end-line="308" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_advanced_class/hiearchical_attention_test.py" />
+    <entry file="file://$PROJECT_DIR$/guardian_classification/Guardian_Topic_Class_CNN_1D_with_GloVE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visualization/t-SNE_plot_formatting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="26" column="29" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="26" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activation_visualization/activation_extractors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="38" column="4" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activation_visualization/activation_vis_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saved_models/multilayer_economist_CNN_Glove_II.h5">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saved_models/multilayer_economist_CNN_Glove_I.h5">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer_learning/transfer_economist_to_guardian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/economist_advanced_class/hiearchical_attention.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="156" column="59" lean-forward="true" selection-start-line="156" selection-start-column="59" selection-end-line="156" selection-end-column="59" />
+          <folding>
+            <element signature="e#39#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

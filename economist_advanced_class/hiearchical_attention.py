@@ -20,7 +20,7 @@ from keras.layers import Embedding
 from keras.layers import Dense, Input, Flatten
 from keras.layers import Conv1D, MaxPooling1D, Embedding, Merge, Dropout, LSTM, GRU, Bidirectional, TimeDistributed
 from keras.models import Model
-
+from economist_advanced_class.Attention_Layer import *
 from keras import backend as K
 from keras.engine.topology import Layer, InputSpec
 from keras import initializers
@@ -59,6 +59,10 @@ file2 = 'Econ_corpus_no_process.p'
 [econ_corpus, labels] = pickle.load(open(econ_dir + file, 'rb'));
 [econ_text, labels] = pickle.load(open(econ_dir + file2, 'rb'));
 
+# sample = np.random.randint(0, len(labels), 20000);
+# econ_corpus = [econ_corpus[i] for i in sample];
+# econ_text = [econ_text[i] for i in sample];
+# labels = [labels[i] for i in sample];
 
 #convert labels
 label_dict = dict();
@@ -117,8 +121,6 @@ x_val = data[-nb_validation_samples:]
 y_val = labels[-nb_validation_samples:]
 
 
-
-
 ## USE GLOVE WORD EMBEDDING
 print('adding a word embedding')
 embeddings_index = {}
@@ -150,9 +152,14 @@ embedded_sequences = embedding_layer(sentence_input)
 l_lstm = Bidirectional(LSTM(100))(embedded_sequences)
 sentEncoder = Model(sentence_input, l_lstm)
 
+#decoder
 review_input = Input(shape=(MAX_SENTS, MAX_SENT_LENGTH), dtype='int32')
 review_encoder = TimeDistributed(sentEncoder)(review_input)
-l_lstm_sent = Bidirectional(LSTM(100))(review_encoder)
+## encoding
+l_att_sent = AttentionDecoder(32,4)(review_encoder)
+
+
+l_lstm_sent = Bidirectional(LSTM(100))(l_att_sent)
 preds = Dense(num_labels+1, activation='softmax')(l_lstm_sent)
 model = Model(review_input, preds)
 
@@ -164,71 +171,6 @@ print("model fitting - Hierachical LSTM")
 print
 model.summary()
 model.fit(x_train, y_train, validation_data=(x_val, y_val),
-          nb_epoch=10, batch_size=50)
-
-# building Hierachical Attention network
-embedding_matrix = np.random.random((len(word_index) + 1, EMBEDDING_DIM))
-for word, i in word_index.items():
-    embedding_vector = embeddings_index.get(word)
-    if embedding_vector is not None:
-        # words not found in embedding index will be all-zeros.
-        embedding_matrix[i] = embedding_vector
-
-embedding_layer = Embedding(len(word_index) + 1,
-                            EMBEDDING_DIM,
-                            weights=[embedding_matrix],
-                            input_length=MAX_SENT_LENGTH,
-                            trainable=True)
-
-
-class AttLayer(Layer):
-    def __init__(self, **kwargs):
-        self.init = initializers.get('normal')
-        # self.input_spec = [InputSpec(ndim=3)]
-        super(AttLayer, self).__init__(**kwargs)
-
-    def build(self, input_shape):
-        assert len(input_shape) == 3
-        # self.W = self.init((input_shape[-1],1))
-        self.W = self.init((input_shape[-1],))
-        # self.input_spec = [InputSpec(shape=input_shape)]
-        self.trainable_weights = [self.W]
-        super(AttLayer, self).build(input_shape)  # be sure you call this somewhere!
-
-    def call(self, x, mask=None):
-        eij = K.tanh(K.dot(x, self.W))
-
-        ai = K.exp(eij)
-        weights = ai / K.sum(ai, axis=1).dimshuffle(0, 'x')
-
-        weighted_input = x * weights.dimshuffle(0, 1, 'x')
-        return weighted_input.sum(axis=1)
-
-    def get_output_shape_for(self, input_shape):
-        return (input_shape[0], input_shape[-1])
-
-
-embedded_sequences = embedding_layer(sentence_input)
-sentence_input = Input(shape=(MAX_SENT_LENGTH,), dtype='int32')
-l_lstm = Bidirectional(GRU(100, return_sequences=True))(embedded_sequences)
-l_dense = TimeDistributed(Dense(200))(l_lstm)
-l_att = AttLayer()(l_dense)
-sentEncoder = Model(sentence_input, l_att)
-
-review_input = Input(shape=(MAX_SENTS, MAX_SENT_LENGTH), dtype='int32')
-review_encoder = TimeDistributed(sentEncoder)(review_input)
-l_lstm_sent = Bidirectional(GRU(100, return_sequences=True))(review_encoder)
-l_dense_sent = TimeDistributed(Dense(200))(l_lstm_sent)
-l_att_sent = AttLayer()(l_dense_sent)
-print(l_att_sent.shape)
-print(num_labels)
-preds = Dense(num_labels+1, activation='softmax')(l_att_sent)
-model = Model(review_input, preds)
-
-model.compile(loss='categorical_crossentropy',
-              optimizer='rmsprop',
-              metrics=['acc'])
-
-print("model fitting - Hierachical attention network")
-model.fit(x_train, y_train, validation_data=(x_val, y_val),
-          nb_epoch=10, batch_size=50)
+          nb_epoch=25, batch_size=128)
+print(model.summary())
+model.save('hiearchical_LSTM.h5')
