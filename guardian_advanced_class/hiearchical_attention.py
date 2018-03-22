@@ -18,18 +18,17 @@ from keras.utils.np_utils import to_categorical
 
 from keras.layers import Embedding
 from keras.layers import Dense, Input, Flatten
-from keras.layers import Conv1D, MaxPooling1D, Embedding, Merge, Dropout, LSTM, GRU, Bidirectional, TimeDistributed
+from keras.layers import Conv1D, MaxPooling1D, Embedding, Merge, Dropout, LSTM, GRU, Bidirectional, TimeDistributed, CuDNNLSTM, CuDNNGRU
 from keras.models import Model
 from economist_advanced_class.Attention_Layer import *
 from keras import backend as K
 from keras.engine.topology import Layer, InputSpec
 from keras import initializers
-from keras.optimizers import Adam
 
-MAX_SENT_LENGTH = 100
+MAX_SENT_LENGTH = 200
 MAX_SENTS = 15
 MAX_NB_WORDS = 20000
-EMBEDDING_DIM = 100
+EMBEDDING_DIM = 200
 VALIDATION_SPLIT = 0.2
 
 
@@ -51,14 +50,15 @@ texts = []
 
 ## GET DATA
 GLOVE_DIR = settings.ROOT_DIR+'\\word_embeddings\\glove.6B\\' #when feeding word embeddings, don't lemmatize
-econ_dir = settings.ROOT_DIR+'\\economist_corpus\\'
+corpus_dir = settings.ROOT_DIR + '\\Guardian_corpus\\'
 dir = settings.ROOT_DIR+'\\processed_data\\'
-file = 'Econ_corpus_sentences.p'
-file2 = 'Econ_corpus_no_process.p'
+file = 'Guardian_corpus_sentences.p';
+file2 = 'condensed_label_guardian_dataset.p';
+file2 = 'Guardian_corpus_raw.p';
 #file = 'Econ_corpus_raw_10k.p'
 
-[econ_corpus, labels] = pickle.load(open(econ_dir + file, 'rb'));
-[econ_text, labels] = pickle.load(open(econ_dir + file2, 'rb'));
+[econ_docs_as_sentences, not_important] = pickle.load(open(corpus_dir + file, 'rb'));
+[econ_corpus, labels] = pickle.load(open(corpus_dir + file2, 'rb'));
 
 # sample = np.random.randint(0, len(labels), 20000);
 # econ_corpus = [econ_corpus[i] for i in sample];
@@ -85,13 +85,13 @@ num_labels = len(set(labels));
 texts = econ_corpus;
 
 tokenizer = Tokenizer(nb_words=MAX_NB_WORDS)
-tokenizer.fit_on_texts(econ_text)
+tokenizer.fit_on_texts(econ_corpus)
 print('tokenization complete')
 
 ## we will do some interesting trimming of max sentences and the sentence length of each data point
 data = np.zeros((len(texts), MAX_SENTS, MAX_SENT_LENGTH), dtype='int32')
 
-for i, sentences in enumerate(econ_corpus):
+for i, sentences in enumerate(econ_docs_as_sentences):
     for j, sent in enumerate(sentences):
         if j < MAX_SENTS:
             wordTokens = text_to_word_sequence(sent)
@@ -125,7 +125,7 @@ y_val = labels[-nb_validation_samples:]
 ## USE GLOVE WORD EMBEDDING
 print('adding a word embedding')
 embeddings_index = {}
-f = open(GLOVE_DIR+ 'glove.6B.100d.txt', 'r', encoding="utf8")
+f = open(GLOVE_DIR+ 'glove.6B.200d.txt', 'r', encoding="utf8")
 for line in f:
     values = line.split()
     word = values[0]
@@ -150,30 +150,28 @@ embedding_layer = Embedding(len(word_index) + 1,
 
 sentence_input = Input(shape=(MAX_SENT_LENGTH,), dtype='int32')
 embedded_sequences = embedding_layer(sentence_input)
-l_lstm = Bidirectional(LSTM(512))(embedded_sequences)
+l_lstm = Bidirectional(CuDNNLSTM(512))(embedded_sequences)
 sentEncoder = Model(sentence_input, l_lstm)
 
 #decoder
 review_input = Input(shape=(MAX_SENTS, MAX_SENT_LENGTH), dtype='int32')
 review_encoder = TimeDistributed(sentEncoder)(review_input)
 ## encoding
-l_att_sent = AttentionDecoder(32,4)(review_encoder)
+l_att_sent = AttentionDecoder(32, 16)(review_encoder)
 
 
-l_lstm_sent = Bidirectional(LSTM(256))(l_att_sent)
+l_lstm_sent = Bidirectional(CuDNNLSTM(256))(l_att_sent)
 preds = Dense(num_labels+1, activation='softmax')(l_lstm_sent)
 model = Model(review_input, preds)
-adam = Adam(lr=1e-3, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
 
 model.compile(loss='categorical_crossentropy',
-              optimizer=adam,
+              optimizer='rmsprop',
               metrics=['acc'])
 
 print("model fitting - Hierachical LSTM")
 print
-
 model.summary()
 model.fit(x_train, y_train, validation_data=(x_val, y_val),
-          nb_epoch=25, batch_size=28)
+          nb_epoch=25, batch_size=32)
 print(model.summary())
-model.save('economist_hiearchical_LSTM.h5')
+model.save('hiearchical_LSTM.h5')

@@ -57,4 +57,14 @@ plt.scatter(X_embedded[:,0], X_embedded[:,1], c=corpus_label, cmap='jet_r');
 plt.xlabel('Embedded Dimension 1');
 plt.ylabel('Embedded Dimension 2');
 plt.title('t-SNE visualization of the Economist vs the Guardian')
+
+plt.colorbar()
+plt.tick_params(
+    axis='both',          # changes apply to the x-axis
+    which='both',      # both major and minor ticks are affected
+    bottom='off',      # ticks along the bottom edge are off
+    top='off',         # ticks along the top edge are off
+    labelbottom='off', right='off', left='off', labelleft='off') # labels along the bottom edge are off
+
+
 plt.show()
